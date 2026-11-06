@@ -2,507 +2,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#07150f">
-<meta name="description" content="Advik Biology Coaching Centre, DIG Chowk, opposite Ursline School, Purnea, Bihar.">
-<title>Advik Biology | Purnea, Bihar</title>
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
-
-:root {
-  --green: #8bff9b;
-  --dark: #07150f;
-  --card: #11251b;
-  --white: #f4fff6;
-  --muted: #a4b9aa;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background: var(--dark);
-  color: var(--white);
-  line-height: 1.6;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 8%;
-  border-bottom: 1px solid #254032;
-  position: sticky;
-  top: 0;
-  background: #07150fee;
-  backdrop-filter: blur(14px);
-  z-index: 10;
-}
-
-.logo {
-  font-size: 21px;
-  font-weight: 800;
-  white-space: nowrap;
-}
-
-.logo span { color: var(--green); }
-
-.nav-links {
-  display: flex;
-  gap: 22px;
-}
-
-nav a {
-  color: var(--white);
-  text-decoration: none;
-  font-size: 13px;
-  transition: .2s;
-}
-
-nav a:hover { color: var(--green); }
-
-.hero {
-  min-height: 580px;
-  padding: 90px 8%;
-  display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  align-items: center;
-  gap: 45px;
-  background: radial-gradient(
-    ellipse at 85% 40%, #17492d 0%, transparent 55%
-  );
-}
-
-.tag {
-  display: inline-block;
-  padding: 7px 15px;
-  border: 1px solid #376a48;
-  border-radius: 30px;
-  color: var(--green);
-  font-size: 12px;
-  margin-bottom: 22px;
-}
-
-h1 {
-  font-size: clamp(40px, 5.5vw, 70px);
-  line-height: 1.12;
-  letter-spacing: -2px;
-}
-
-h1 span, .section-head h2 span, .about h2 span {
-  color: var(--green);
-}
-
-.hero p {
-  color: var(--muted);
-  max-width: 510px;
-  margin: 23px 0 30px;
-  font-size: 15px;
-}
-
-.btn {
-  display: inline-block;
-  background: var(--green);
-  color: #07150f;
-  padding: 13px 22px;
-  border-radius: 9px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 13px;
-  border: 1px solid var(--green);
-  transition: .25s;
-  cursor: pointer;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px #8bff9b30;
-}
-
-.secondary {
-  border-color: #45624d;
-  background: transparent;
-  color: white;
-  margin-left: 10px;
-}
-
-.science-card {
-  background: linear-gradient(145deg, #173b26, #0d1d14);
-  border: 1px solid #376548;
-  border-radius: 28px;
-  padding: 35px;
-  text-align: center;
-  box-shadow: 0 25px 70px #0005;
-}
-
-.dna {
-  font-size: 105px;
-  line-height: 1.5;
-  filter: drop-shadow(0 0 25px #8bff9b40);
-}
-
-.science-card h2 { font-size: 25px; }
-
-.science-card p {
-  color: var(--muted);
-  margin: 10px auto 20px;
-  font-size: 13px;
-}
-
-section { padding: 85px 8%; }
-
-.section-head {
-  text-align: center;
-  margin-bottom: 45px;
-}
-
-.section-head h2 {
-  font-size: 36px;
-  margin-bottom: 10px;
-}
-
-.section-head p {
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.card {
-  background: var(--card);
-  border: 1px solid #244431;
-  padding: 28px;
-  border-radius: 18px;
-  transition: .25s;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  border-color: var(--green);
-}
-
-.card .icon { font-size: 35px; }
-
-.card h3 { margin: 16px 0 10px; }
-
-.card p {
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.about {
-  background: #0c1e13;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 45px;
-}
-
-.about h2 {
-  font-size: 38px;
-  line-height: 1.2;
-  margin-bottom: 20px;
-}
-
-.about p {
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.features {
-  display: grid;
-  gap: 15px;
-}
-
-.feature {
-  background: #132b1c;
-  padding: 17px;
-  border-radius: 12px;
-  border: 1px solid #244431;
-}
-
-.feature b { color: var(--green); }
-
-.contact-box {
-  max-width: 760px;
-  margin: auto;
-  text-align: center;
-  background: linear-gradient(135deg, #183b25, #102218);
-  padding: 45px 25px;
-  border: 1px solid #376548;
-  border-radius: 24px;
-}
-
-.contact-box h2 { font-size: 34px; }
-
-.contact-box p {
-  color: var(--muted);
-  margin: 15px 0 25px;
-}
-
-.address {
-  font-size: 16px;
-  color: var(--white);
-  font-weight: 500;
-}
-
-/* PHONE CONTACT SECTION */
-.phone-contact {
-  margin: 28px auto;
-  padding: 25px 15px;
-  max-width: 450px;
-  background: #07150f;
-  border: 1px solid #376548;
-  border-radius: 18px;
-}
-
-.phone-contact .phone-label {
-  color: var(--green);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  margin: 0 0 8px;
-}
-
-.phone-contact h3 {
-  font-size: 22px;
-  margin-bottom: 8px;
-}
-
-.phone-contact .phone-number {
-  color: var(--white);
-  font-size: 20px;
-  font-weight: 700;
-  margin: 10px 0 20px;
-}
-
-footer {
-  text-align: center;
-  padding: 25px;
-  border-top: 1px solid #254032;
-  color: var(--muted);
-  font-size: 12px;
-}
-
-@media (max-width: 750px) {
-  nav {
-    padding: 17px 5%;
-    flex-wrap: wrap;
-    gap: 14px;
-  }
-
-  .logo { font-size: 18px; }
-
-  .nav-links {
-    gap: 15px;
-    flex-wrap: wrap;
-  }
-
-  nav a { font-size: 12px; }
-
-  .hero, .about { grid-template-columns: 1fr; }
-
-  .hero { padding: 65px 6%; }
-
-  section { padding: 65px 6%; }
-
-  .grid { grid-template-columns: 1fr; }
-
-  .science-card { padding: 25px; }
-
-  .about h2 { font-size: 32px; }
-
-  .section-head h2 { font-size: 30px; }
-
-  .contact-box h2 { font-size: 28px; }
-
-  .secondary {
-    margin: 12px 0 0;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-
-  *, *::before, *::after {
-    animation-duration: .01ms !important;
-    transition-duration: .01ms !important;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Advik Biology - Learn Biology with clarity, confidence and curiosity.">
+  <title>Advik Biology | Learn Biology with Clarity</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-<nav>
-  <div class="logo">🧬 ADVIK <span>BIOLOGY</span></div>
-  <div class="nav-links">
+<header class="header">
+  <a href="#" class="logo">ADViK <span>BIOLOGY</span></a>
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+  <nav id="navigation">
     <a href="#home">Home</a>
     <a href="#courses">Courses</a>
+    <a href="#notes">Study Notes</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
-  </div>
-</nav>
-
-<header class="hero" id="home">
-  <div>
-    <span class="tag">🧬 BIOLOGY • LEARN • DISCOVER</span>
-
-    <h1>
-      Understand<br>
-      Life. Master<br>
-      <span>Biology.</span>
-    </h1>
-
-    <p>
-      Explore the fascinating world of biology with Advik Biology.
-      Discover living organisms, understand scientific concepts,
-      and build your knowledge one topic at a time.
-    </p>
-
-    <a class="btn" href="#courses">Explore Courses ↗</a>
-    <a class="btn secondary" href="#contact">Find Our Centre</a>
-  </div>
-
-  <div class="science-card">
-    <div class="dna">🧬</div>
-    <h2>Biology Made Clear</h2>
-    <p>From the smallest cell to the complexity of life.</p>
-    <span class="tag">DISCOVER YOUR POTENTIAL</span>
-  </div>
+  </nav>
 </header>
 
-<section id="courses">
-  <div class="section-head">
-    <h2>Explore <span>Biology</span></h2>
-    <p>Build your understanding, one concept at a time.</p>
+<main>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <p class="tag">YOUR BIOLOGY LEARNING SPACE</p>
+    <h1>Understand Biology.<br><em>Think Beyond.</em></h1>
+    <p>Explore the fascinating science of life with clear explanations, smart revision and beautiful study resources.</p>
+    <a href="#courses" class="btn">Explore Courses →</a>
+    <a href="#notes" class="secondary-btn">Free Study Notes ↗</a>
   </div>
+  <div class="hero-art">
+    <div class="cell">✳</div>
+    <p>THE SCIENCE OF LIFE</p>
+    <h3>Every detail has a story.</h3>
+  </div>
+</section>
 
-  <div class="grid">
-    <div class="card">
-      <div class="icon">🔬</div>
-      <h3>Cell Biology</h3>
-      <p>Discover cells, organelles, and the building blocks of life.</p>
-    </div>
+<section class="section" id="courses">
+  <p class="tag dark">WHAT YOU CAN STUDY</p>
+  <h2>Explore Our <em>Courses</em></h2>
+  <div class="cards">
+    <article class="card">
+      <div class="card-icon">🌿</div>
+      <p>CLASS 11</p>
+      <h3>Class 11 Biology</h3>
+      <p>Build a strong foundation in the diversity, structure and functions of living organisms.</p>
+      <a href="#contact">Explore →</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">🧬</div>
+      <p>CLASS 12</p>
+      <h3>Class 12 Biology</h3>
+      <p>Explore reproduction, genetics, evolution, biotechnology and ecology.</p>
+      <a href="#contact">Explore →</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">📚</div>
+      <p>REVISION</p>
+      <h3>Crash Course</h3>
+      <p>Revise important concepts with concise, chapter-wise study material.</p>
+      <a href="#notes">View Notes →</a>
+    </article>
+  </div>
+</section>
 
-    <div class="card">
-      <div class="icon">🌱</div>
-      <h3>Plant Biology</h3>
-      <p>Explore plant structures, photosynthesis, and growth.</p>
-    </div>
+<section class="feature">
+  <div>
+    <p class="tag">OUR PHILOSOPHY</p>
+    <h2>Don't just memorise.<br><em>Understand the WHY.</em></h2>
+  </div>
+  <p>Biology becomes easier when you understand how living systems work and how different concepts connect.</p>
+</section>
 
-    <div class="card">
-      <div class="icon">🫀</div>
-      <h3>Human Biology</h3>
-      <p>Learn about human anatomy, organs, and body systems.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">🧬</div>
-      <h3>Genetics</h3>
-      <p>Understand DNA, genes, inheritance, and variation.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">🦠</div>
-      <h3>Microbiology</h3>
-      <p>Discover microorganisms and their roles in our world.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">🌍</div>
-      <h3>Ecology</h3>
-      <p>Explore ecosystems and relationships between organisms.</p>
-    </div>
+<section class="section" id="notes">
+  <p class="tag dark">YOUR STUDY DESK</p>
+  <h2>Free Study <em>Resources</em></h2>
+  <p class="intro">Explore Biology learning material in English and Hindi.</p>
+  <div class="cards">
+    <article class="card">
+      <div class="card-icon">📖</div>
+      <p>CLASS 12 · ENGLISH</p>
+      <h3>Human Reproduction</h3>
+      <p>Crash-course revision notes.</p>
+      <a href="#" class="resource-link">PDF COMING SOON ↗</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">📗</div>
+      <p>CLASS 12 · HINDI</p>
+      <h3>मानव प्रजनन</h3>
+      <p>अध्याय की संक्षिप्त अध्ययन सामग्री।</p>
+      <a href="#" class="resource-link">PDF COMING SOON ↗</a>
+    </article>
+    <article class="card">
+      <div class="card-icon">✚</div>
+      <p>MORE RESOURCES</p>
+      <h3>Coming Soon</h3>
+      <p>More chapters and revision materials will be added.</p>
+    </article>
   </div>
 </section>
 
 <section class="about" id="about">
-  <div>
-    <span class="tag">ABOUT THE CENTRE</span>
-
-    <h2>Where curiosity meets <span>science.</span></h2>
-
-    <p>
-      Welcome to Advik Biology. This website presents a
-      science-inspired space for biology learning. Add the
-      centre's verified faculty details, class timings, courses,
-      and student achievements to personalize this page.
-    </p>
-  </div>
-
-  <div class="features">
-    <div class="feature">
-      ✦ <b>Concept-Based Learning</b><br>
-      Understand the ideas behind scientific facts.
-    </div>
-
-    <div class="feature">
-      ✦ <b>Practice and Revision</b><br>
-      Strengthen knowledge with regular practice.
-    </div>
-
-    <div class="feature">
-      ✦ <b>Science-Focused Learning</b><br>
-      Stay curious and keep discovering.
-    </div>
-  </div>
+  <p class="tag">ABOUT ADVIK BIOLOGY</p>
+  <h2>Biology is not just a subject.<br><em>It's Life.</em></h2>
+  <p>Advik Biology is a learning space built around one simple idea: Biology becomes more interesting when you understand it.</p>
 </section>
 
-<section id="contact">
-  <div class="contact-box">
-    <span class="tag">VISIT OUR CENTRE</span>
-
-    <h2>Ready to explore life?</h2>
-
-    <p class="address">
-      Advik Biology Coaching Centre<br>
-      DIG CHOWK, opp. Ursline School,<br>
-      PURNEA BIHAR
-    </p>
-
-    <!-- PHONE CONTACT -->
-    <div class="phone-contact">
-      <p class="phone-label">📞 CONTACT US ON PHONE</p>
-
-      <h3>Call for Enquiries</h3>
-
-      <!-- Replace XXXXXXXXXX with the real number -->
-      <p class="phone-number">+91 7004796080</p>
-
-      <!-- Put the same number after +91, without spaces -->
-      <a class="btn" href="tel:+917004796080">
-        📞 Call Us Now
-      </a>
-    </div>
-
-    <a
-      class="btn"
-      href="https://www.google.com/maps/search/?api=1&query=Advik+Biology+DIG+Chowk+opposite+Ursline+School+Purnea+Bihar"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Find Us on Maps ↗
-    </a>
-  </div>
+<section class="section faq">
+  <p class="tag dark">GOOD TO KNOW</p>
+  <h2>Frequently Asked <em>Questions</em></h2>
+  <details>
+    <summary>Who are these notes for?</summary>
+    <p>Our learning resources are designed for students studying Biology in Classes 11 and 12.</p>
+  </details>
+  <details>
+    <summary>Are the notes free?</summary>
+    <p>Resources marked free can be accessed without payment once their PDFs are published.</p>
+  </details>
+  <details>
+    <summary>Will more chapters be added?</summary>
+    <p>Yes! More Biology study materials can be added as the resource library grows.</p>
+  </details>
 </section>
+
+<section class="contact" id="contact">
+  <p class="tag">LET'S CONNECT</p>
+  <h2>Ready to learn<br><em>something new?</em></h2>
+  <p>Have a question or a chapter suggestion? Get in touch.</p>
+  <p>Contact details coming soon.</p>
+</section>
+</main>
 
 <footer>
-  © 2026 Advik Biology • Purnea, Bihar<br>
-  Website concept — official centre details should be verified.
+  <a href="#" class="logo">ADViK <span>BIOLOGY</span></a>
+  <p>Learn with clarity. Grow with curiosity.</p>
+  <p>© <span id="year"></span> Advik Biology. All rights reserved.</p>
 </footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("navigation").classList.toggle("show");
+}
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
